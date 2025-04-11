@@ -1,0 +1,12 @@
+﻿@model string
+@{
+    ViewData["Title"] = "Fake News Checker";
+}
+
+<div class="container">
+    <h1>Check News Authenticity</h1>
+    <form asp-action="CheckNews" method="post">
+        <textarea name="text" class="form-control"></textarea>
+        <button type="submit" class="btn btn-primary">Check</button>
+    </form>
+</div>

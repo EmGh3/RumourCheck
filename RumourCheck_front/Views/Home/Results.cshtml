@@ -1,0 +1,31 @@
+﻿@model RumourCheck_front.ViewModels.PredictionResultViewModel
+@{
+    ViewData["Title"] = "Analysis Results";
+}
+
+<div class="result-container">
+    <h2>Analysis Results</h2>
+
+    <div class="card @(Model.Prediction ? "border-success" : "border-danger")">
+        <div class="card-body">
+            <h5 class="card-title">
+                @(Model.Prediction ? "✅ Trustworthy" : "❌ Likely Fake")
+                <span class="badge bg-@(Model.Prediction ? "success" : "danger")">
+                    @Model.TrueConfidence.ToString() True
+                    @Model.FakeConfidence.ToString() False
+                </span>
+            </h5>
+            <p class="card-text">@Model.Text</p>
+        </div>
+    </div>
+
+    <a asp-action="Index" class="btn btn-primary mt-3">Check Another</a>
+</div>
+
+<style>
+        .result-container {
+        max-width: 800px;
+
+        margin: 2rem auto;
+    }
+</style>

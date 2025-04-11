@@ -2,14 +2,14 @@ import pandas as pd
 import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import PassiveAggressiveClassifier, LogisticRegression
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix
 
 from text_cleaning import *
 
 # Constants
 TEST_SIZE = 0.2
-RANDOM_STATE = 42
+RANDOM_STATE = 1
 MODEL_FILENAME = 'model\\news_model.joblib'
 VECTORIZER_FILENAME = 'model\\vectorizer.joblib'
 
@@ -69,8 +69,6 @@ def main():
     # Save model
     save_model(pac, tfidf_vectorizer)
 
-    return pac, tfidf_vectorizer
-
 
 def save_model(model, vectorizer, model_path=MODEL_FILENAME, vectorizer_path=VECTORIZER_FILENAME):
     """Save model and vectorizer to disk"""
@@ -81,4 +79,4 @@ def save_model(model, vectorizer, model_path=MODEL_FILENAME, vectorizer_path=VEC
 
 
 if __name__ == '__main__':
-    model, vectorizer = main()
+    main()

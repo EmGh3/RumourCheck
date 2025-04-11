@@ -1,0 +1,209 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\models\\predictionresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:models\\predictionresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\viewmodels\\predictionresultviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:viewmodels\\predictionresultviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\views\\home\\results.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:views\\home\\results.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\wwwroot\\lib\\jquery\\dist\\jquery.min.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:wwwroot\\lib\\jquery\\dist\\jquery.min.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\wwwroot\\lib\\jquery\\dist\\jquery.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:wwwroot\\lib\\jquery\\dist\\jquery.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Results.cshtml",
+              "DocumentMoniker": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Views\\Home\\Results.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Results.cshtml",
+              "ToolTip": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Views\\Home\\Results.cshtml",
+              "RelativeToolTip": "Views\\Home\\Results.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAqwBwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T19:29:09.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T19:13:37.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PredictionResultViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\ViewModels\\PredictionResultViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\PredictionResultViewModel.cs",
+              "ToolTip": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\ViewModels\\PredictionResultViewModel.cs",
+              "RelativeToolTip": "ViewModels\\PredictionResultViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T19:31:34.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T19:17:14.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T20:25:25.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PredictionResult.cs",
+              "DocumentMoniker": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Models\\PredictionResult.cs",
+              "RelativeDocumentMoniker": "Models\\PredictionResult.cs",
+              "ToolTip": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Models\\PredictionResult.cs",
+              "RelativeToolTip": "Models\\PredictionResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T19:11:22.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-11T09:48:06.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "jquery.js",
+              "DocumentMoniker": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+              "RelativeDocumentMoniker": "wwwroot\\lib\\jquery\\dist\\jquery.js",
+              "ToolTip": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+              "RelativeToolTip": "wwwroot\\lib\\jquery\\dist\\jquery.js",
+              "ViewState": "AgIAAGIDAAAAAAAAAAAUwHIDAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-10T20:38:11.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "jquery.min.map",
+              "DocumentMoniker": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+              "RelativeDocumentMoniker": "wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+              "ToolTip": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+              "RelativeToolTip": "wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAACjCAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-10T20:38:16.311Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T19:48:09.099Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T19:35:13.467Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

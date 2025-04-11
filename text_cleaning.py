@@ -37,7 +37,7 @@ def clean_text(text):
     # Tokenize text
     tokens = word_tokenize(text)
 
-    # Initialize lemmatizer
+    # Initialize lemmatizer(reduces words to their base form)
     lemmatizer = WordNetLemmatizer()
 
     # Remove stopwords and lemmatize
