@@ -5,19 +5,19 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix
 
-from text_cleaning import *
+from src.text_cleaning import *
 
 # Constants
 TEST_SIZE = 0.2
 RANDOM_STATE = 1
-MODEL_FILENAME = 'model\\news_model.joblib'
-VECTORIZER_FILENAME = 'model\\vectorizer.joblib'
+MODEL_FILENAME = '../model/news_model.joblib'
+VECTORIZER_FILENAME = '../model/vectorizer.joblib'
 
 
 def main():
     # Load and prepare the data
-    fake_news_data = pd.read_csv("dataset\\Fake.csv")
-    true_news_data = pd.read_csv("dataset\\True.csv")
+    fake_news_data = pd.read_csv("../dataset/Fake.csv")
+    true_news_data = pd.read_csv("../dataset/True.csv")
 
     # Add labels (0 for fake, 1 for true)
     fake_news_data["label"] = 0

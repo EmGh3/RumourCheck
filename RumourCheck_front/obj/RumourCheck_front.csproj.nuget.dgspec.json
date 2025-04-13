@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\RumourCheck_front.csproj": {}
+    "C:\\Users\\Yasmine Sassi\\Desktop\\RumourCheck\\RumourCheck_front\\RumourCheck_front.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\RumourCheck_front.csproj": {
+    "C:\\Users\\Yasmine Sassi\\Desktop\\RumourCheck\\RumourCheck_front\\RumourCheck_front.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\RumourCheck_front.csproj",
+        "projectUniqueName": "C:\\Users\\Yasmine Sassi\\Desktop\\RumourCheck\\RumourCheck_front\\RumourCheck_front.csproj",
         "projectName": "RumourCheck_front",
-        "projectPath": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\RumourCheck_front.csproj",
-        "packagesPath": "C:\\Users\\gharb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\obj\\",
+        "projectPath": "C:\\Users\\Yasmine Sassi\\Desktop\\RumourCheck\\RumourCheck_front\\RumourCheck_front.csproj",
+        "packagesPath": "C:\\Users\\Yasmine Sassi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Yasmine Sassi\\Desktop\\RumourCheck\\RumourCheck_front\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\gharb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Yasmine Sassi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

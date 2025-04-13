@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
-from text_cleaning import *
+from src.text_cleaning import *
 
 app = FastAPI()
 
@@ -12,8 +12,8 @@ class NewsRequest(BaseModel):
 
 # Load models
 try:
-    model = joblib.load("model/news_model.joblib")
-    vectorizer = joblib.load("model/vectorizer.joblib")
+    model = joblib.load("../model/news_model.joblib")
+    vectorizer = joblib.load("../model/vectorizer.joblib")
 except Exception as e:
     raise RuntimeError(f"Failed to load models: {str(e)}")
 
