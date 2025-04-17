@@ -5,8 +5,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix
 
-from src.text_cleaning import *
-
 # Constants
 TEST_SIZE = 0.2
 RANDOM_STATE = 1
@@ -16,8 +14,8 @@ VECTORIZER_FILENAME = '../model/vectorizer.joblib'
 
 def main():
     # Load and prepare the data
-    fake_news_data = pd.read_csv("../dataset/Fake.csv")
-    true_news_data = pd.read_csv("../dataset/True.csv")
+    fake_news_data = pd.read_csv("../dataset/Fake_processed.csv")
+    true_news_data = pd.read_csv("../dataset/True_processed.csv")
 
     # Add labels (0 for fake, 1 for true)
     fake_news_data["label"] = 0
@@ -31,10 +29,7 @@ def main():
 
     # Combine title and text for better features
     news_data['full_text'] = news_data['title'] + ' ' + news_data['text']
-
-    # Apply text cleaning
-    news_data = apply_text_cleaning(news_data)
-
+    news_data['full_text'] = news_data['full_text'].fillna("")
     # Split into training and test sets
     x_train, x_test, y_train, y_test = train_test_split(
         news_data['full_text'],
@@ -44,7 +39,7 @@ def main():
     )
 
     # Initialize TF-IDF Vectorizer
-    tfidf_vectorizer = TfidfVectorizer(max_df=0.7)
+    tfidf_vectorizer = TfidfVectorizer()
 
     # Fit and transform train set, transform test set
     tfidf_train = tfidf_vectorizer.fit_transform(x_train)

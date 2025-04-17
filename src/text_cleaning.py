@@ -60,3 +60,46 @@ def apply_text_cleaning(df, text_column='full_text'):
     """
     df['cleaned_text'] = df[text_column].apply(clean_text)
     return df
+
+
+import csv
+
+
+def clean_row(row):
+    """cleans each row"""
+    processed_row = {
+        'title': clean_text(row['title']),
+        'text': clean_text(row['text']),
+        'subject': row['subject'],
+        'date': row['date']
+    }
+    return processed_row
+
+
+def clean_csv(input_file, output_file, processing_func):
+    """
+    Process a CSV file and save results to a new file.
+
+    Args:
+        input_file (str): Path to input CSV
+        output_file (str): Path for output CSV
+        processing_func (function): Function to apply to each row
+    """
+    with open(input_file, mode='r', encoding='utf-8') as infile, \
+            open(output_file, mode='w', encoding='utf-8', newline='') as outfile:
+        reader = csv.DictReader(infile)
+        writer = csv.DictWriter(outfile, fieldnames=reader.fieldnames)
+
+        writer.writeheader()
+
+        for row in reader:
+            processed_row = processing_func(row)
+            writer.writerow(processed_row)
+
+if __name__ == '__main__':
+    input_csv = "../dataset/True.csv"
+    output_csv = "../dataset/True_processed.csv"
+    clean_csv(input_csv, output_csv, clean_row)
+    input_csv = "../dataset/Fake.csv"
+    output_csv = "../dataset/Fake_processed.csv"
+    clean_csv(input_csv, output_csv, clean_row)

@@ -29,3 +29,7 @@ C:\Users\gharb\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\refint
 C:\Users\gharb\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\RumourCheck_front.pdb
 C:\Users\gharb\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\RumourCheck_front.genruntimeconfig.cache
 C:\Users\gharb\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\ref\RumourCheck_front.dll
+C:\Users\gharb\Desktop\PPP\RumourCheck\RumourCheck_front\bin\Debug\net8.0\RumourCheck_front.staticwebassets.endpoints.json
+C:\Users\gharb\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\gharb\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\staticwebassets\msbuild.RumourCheck_front.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\gharb\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

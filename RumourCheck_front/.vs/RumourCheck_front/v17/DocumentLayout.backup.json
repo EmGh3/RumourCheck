@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\models\\predictionresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:models\\predictionresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\viewmodels\\predictionresultviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:viewmodels\\predictionresultviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\models\\predictionresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:models\\predictionresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -67,6 +67,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -88,14 +92,14 @@
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAiwBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T19:13:37.879Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "PredictionResultViewModel.cs",
               "DocumentMoniker": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\ViewModels\\PredictionResultViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\PredictionResultViewModel.cs",
@@ -103,7 +107,8 @@
               "RelativeToolTip": "ViewModels\\PredictionResultViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T19:31:34.433Z"
+              "WhenOpened": "2025-04-10T19:31:34.433Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -131,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "PredictionResult.cs",
               "DocumentMoniker": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Models\\PredictionResult.cs",
               "RelativeDocumentMoniker": "Models\\PredictionResult.cs",

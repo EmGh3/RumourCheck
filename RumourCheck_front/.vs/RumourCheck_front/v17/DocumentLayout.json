@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\viewmodels\\predictionresultviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:viewmodels\\predictionresultviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\viewmodels\\predictionresultviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|solutionrelative:viewmodels\\predictionresultviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BAE4ED0D-6FE7-41A5-89AF-FBC58C455CDE}|RumourCheck_front.csproj|c:\\users\\gharb\\desktop\\ppp\\rumourcheck\\rumourcheck_front\\models\\predictionresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -69,6 +69,10 @@
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Results.cshtml",
@@ -82,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -95,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PredictionResultViewModel.cs",
               "DocumentMoniker": "C:\\Users\\gharb\\Desktop\\PPP\\RumourCheck\\RumourCheck_front\\ViewModels\\PredictionResultViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\PredictionResultViewModel.cs",
