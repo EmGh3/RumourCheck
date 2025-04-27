@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from text_cleaning import clean_text
 
 # Guardian API Config
-API_KEY = "YOUR_API_KEY"  # Replace with your API key
+API_KEY = "3bdff0c0-d04e-44a2-aedb-9cf2d0d6853c"  # Replace with your API key
 BASE_URL = "https://content.guardianapis.com/search"
 CSV_FILE = "../dataset/True_processed.csv"
 csv.field_size_limit(1000000)

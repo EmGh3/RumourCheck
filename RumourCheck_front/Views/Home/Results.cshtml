@@ -3,29 +3,36 @@
     ViewData["Title"] = "Analysis Results";
 }
 
+<link rel="stylesheet" href="~/css/result.css" />
+
 <div class="result-container">
     <h2>Analysis Results</h2>
 
     <div class="card @(Model.Prediction ? "border-success" : "border-danger")">
         <div class="card-body">
             <h5 class="card-title">
-                @(Model.Prediction ? "✅ Trustworthy" : "❌ Likely Fake")
+                <span>@(Model.Prediction ? "✅ Trustworthy Content" : "❌ Potential Fake News")</span>
                 <span class="badge bg-@(Model.Prediction ? "success" : "danger")">
-                    @Model.TrueConfidence.ToString() True
-                    @Model.FakeConfidence.ToString() False
+                    Confidence: @((Model.Prediction ? Model.TrueConfidence : Model.FakeConfidence).ToString("P0"))
                 </span>
             </h5>
-            <p class="card-text">@Model.Text</p>
+
+            <div class="confidence-meter">
+                <div class="confidence-bar">
+                    <div class="confidence-fill" style="width: @((Model.TrueConfidence * 100).ToString("0"))%; background-color: var(--success-color);"></div>
+                </div>
+                <div class="confidence-labels">
+                    <span>True: @Model.TrueConfidence.ToString("P1")</span>
+                    <span>False: @Model.FakeConfidence.ToString("P1")</span>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h6>Analyzed Text:</h6>
+                <p class="card-text">@Model.Text</p>
+            </div>
         </div>
     </div>
 
-    <a asp-action="Index" class="btn btn-primary mt-3">Check Another</a>
+    <a asp-action="Index" class="btn btn-primary mt-3">Check Another Article</a>
 </div>
-
-<style>
-        .result-container {
-        max-width: 800px;
-
-        margin: 2rem auto;
-    }
-</style>

@@ -7,5 +7,7 @@
         public bool Prediction { get; set; }
         public double FakeConfidence { get; set; }
         public double TrueConfidence { get; set; }
+        public DateTime verifiedAt { get; set; }
+
     }
 }

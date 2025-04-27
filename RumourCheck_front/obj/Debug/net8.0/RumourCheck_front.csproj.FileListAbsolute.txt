@@ -33,3 +33,34 @@ C:\Users\gharb\Desktop\PPP\RumourCheck\RumourCheck_front\bin\Debug\net8.0\Rumour
 C:\Users\gharb\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\gharb\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\staticwebassets\msbuild.RumourCheck_front.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\gharb\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\bin\Debug\net8.0\appsettings.json
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\bin\Debug\net8.0\RumourCheck_front.staticwebassets.runtime.json
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\bin\Debug\net8.0\RumourCheck_front.exe
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\bin\Debug\net8.0\RumourCheck_front.deps.json
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\bin\Debug\net8.0\RumourCheck_front.runtimeconfig.json
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\bin\Debug\net8.0\RumourCheck_front.dll
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\bin\Debug\net8.0\RumourCheck_front.pdb
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\RumourCheck_front.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\RumourCheck_front.AssemblyInfoInputs.cache
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\RumourCheck_front.AssemblyInfo.cs
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\RumourCheck_front.csproj.CoreCompileInputs.cache
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\RumourCheck_front.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\RumourCheck_front.RazorAssemblyInfo.cache
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\RumourCheck_front.RazorAssemblyInfo.cs
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\RumourCheck_front.sourcelink.json
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\staticwebassets\msbuild.RumourCheck_front.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\staticwebassets\msbuild.build.RumourCheck_front.props
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.RumourCheck_front.props
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.RumourCheck_front.props
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\scopedcss\bundle\RumourCheck_front.styles.css
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\scopedcss\projectbundle\RumourCheck_front.bundle.scp.css
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\RumourCheck_front.dll
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\refint\RumourCheck_front.dll
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\RumourCheck_front.pdb
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\RumourCheck_front.genruntimeconfig.cache
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\ref\RumourCheck_front.dll

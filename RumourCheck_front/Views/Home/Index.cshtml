@@ -2,11 +2,17 @@
 @{
     ViewData["Title"] = "Fake News Checker";
 }
+<link rel="stylesheet" href="~/css/article.css" />
 
 <div class="container">
-    <h1>Check News Authenticity</h1>
-    <form asp-action="CheckNews" method="post">
-        <textarea name="text" class="form-control"></textarea>
-        <button type="submit" class="btn btn-primary">Check</button>
+    <h1 class="title">Check News Authenticity</h1>
+    <form asp-action="CheckNews" method="post" class="form-container">
+        <div class="form-group">
+            <label class="form-label">
+                Collez votre article ici
+            </label>
+            <textarea name="text" class="form-control form-textarea"></textarea>
+            <button type="submit" class="btn btn-primary">Check</button>
+        </div>
     </form>
 </div>
