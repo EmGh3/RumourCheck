@@ -1,6 +1,167 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="privacy-container">
+    <div class="privacy-hero">
+        <div class="container">
+            <h1><i class="fas fa-shield-alt"></i> Privacy Policy</h1>
+            <p class="lead">How we protect and handle your information</p>
+        </div>
+    </div>
+
+    <div class="privacy-content">
+        <div class="container">
+            <div class="privacy-card">
+                <section class="privacy-section">
+                    <h2><i class="fas fa-info-circle"></i> Information We Collect</h2>
+                    <p>FactCheck is committed to transparency about what data we collect and how we use it:</p>
+                    <ul class="privacy-list">
+                        <li>
+                            <strong>Content Analysis Data:</strong> When you submit text for verification, we process the content to perform our analysis. This data is temporarily stored for the verification process.
+                        </li>
+                        <li>
+                            <strong>Usage Data:</strong> We collect anonymous usage statistics to improve our service, including frequency of use and types of content analyzed.
+                        </li>
+                        <li>
+                            <strong>Technical Information:</strong> Basic device and browser information is collected to ensure compatibility and optimize performance.
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="privacy-section">
+                    <h2><i class="fas fa-lock"></i> How We Use Your Information</h2>
+                    <div class="usage-grid">
+                        <div class="usage-card">
+                            <div class="usage-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3>Content Verification</h3>
+                            <p>To analyze and verify the authenticity of submitted content using our algorithms</p>
+                        </div>
+                        <div class="usage-card">
+                            <div class="usage-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Service Improvement</h3>
+                            <p>To enhance our detection algorithms and improve accuracy</p>
+                        </div>
+                        <div class="usage-card">
+                            <div class="usage-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <h3>Problem Resolution</h3>
+                            <p>To identify and fix technical issues with our platform</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2><i class="fas fa-database"></i> Data Retention</h2>
+                    <p>We follow strict data retention policies:</p>
+                    <div class="retention-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-badge">24h</div>
+                            <div class="timeline-content">
+                                <h3>Submitted Content</h3>
+                                <p>Original text is automatically deleted within 24 hours of processing</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-badge">30d</div>
+                            <div class="timeline-content">
+                                <h3>Analysis Results</h3>
+                                <p>Anonymized verification results are retained for 30 days for quality assurance</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-badge">∞</div>
+                            <div class="timeline-content">
+                                <h3>Aggregate Data</h3>
+                                <p>Statistical data without personal identifiers may be kept indefinitely</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2><i class="fas fa-user-shield"></i> Your Rights</h2>
+                    <p>You have certain rights regarding your data:</p>
+                    <div class="rights-grid">
+                        <div class="right-card">
+                            <i class="fas fa-eye"></i>
+                            <h3>Right to Access</h3>
+                            <p>Request a copy of any personal data we hold about you</p>
+                        </div>
+                        <div class="right-card">
+                            <i class="fas fa-eraser"></i>
+                            <h3>Right to Erasure</h3>
+                            <p>Request deletion of your personal data</p>
+                        </div>
+                        <div class="right-card">
+                            <i class="fas fa-ban"></i>
+                            <h3>Right to Object</h3>
+                            <p>Object to certain types of processing</p>
+                        </div>
+                        <div class="right-card">
+                            <i class="fas fa-file-export"></i>
+                            <h3>Right to Portability</h3>
+                            <p>Request your data in a machine-readable format</p>
+                        </div>
+                    </div>
+                    <p class="contact-request">To exercise these rights, please <a href="mailto:yasmine.3.sassi@gmail.com">contact our privacy team</a>.</p>
+                </section>
+
+                <section class="privacy-section">
+                    <h2><i class="fas fa-cookie"></i> Cookies & Tracking</h2>
+                    <p>We use minimal cookies to enhance your experience:</p>
+                    <table class="cookies-table">
+                        <thead>
+                            <tr>
+                                <th>Cookie</th>
+                                <th>Purpose</th>
+                                <th>Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>session_id</td>
+                                <td>Maintain your session</td>
+                                <td>Browser session</td>
+                            </tr>
+                            <tr>
+                                <td>preferences</td>
+                                <td>Store UI preferences</td>
+                                <td>30 days</td>
+                            </tr>
+                            <tr>
+                                <td>_ga</td>
+                                <td>Anonymous analytics</td>
+                                <td>2 years</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="cookie-consent">
+                        <p>You can manage cookie preferences in your browser settings.</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2><i class="fas fa-exchange-alt"></i> Third-Party Services</h2>
+                    <p>We may use these trusted services to enhance our functionality:</p>
+                    <ul class="third-party-list">
+                        <li><strong>Cloud Hosting:</strong> Azure/AWS for secure data processing</li>
+                        <li><strong>Analytics:</strong> Google Analytics (anonymized data only)</li>
+                        <li><strong>Machine Learning:</strong> Custom models hosted on secure infrastructure</li>
+                    </ul>
+                    <p>All third-party services are vetted for compliance with privacy regulations.</p>
+                </section>
+
+                <div class="policy-update">
+                    <h3><i class="fas fa-history"></i> Policy Updates</h3>
+                    <p>This policy was last updated on <strong>@DateTime.Now.ToString("MMMM d, yyyy")</strong>. We may update this policy periodically. Significant changes will be announced through our website.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

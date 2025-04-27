@@ -1,18 +1,48 @@
-﻿@model string
-@{
-    ViewData["Title"] = "Fake News Checker";
+﻿@{
+    ViewData["Title"] = "Fake News Detector";
 }
-<link rel="stylesheet" href="~/css/article.css" />
 
-<div class="container">
-    <h1 class="title">Check News Authenticity</h1>
-    <form asp-action="CheckNews" method="post" class="form-container">
-        <div class="form-group">
-            <label class="form-label">
-                Collez votre article ici
-            </label>
-            <textarea name="text" class="form-control form-textarea"></textarea>
-            <button type="submit" class="btn btn-primary">Check</button>
+<div class="hero">
+    <div class="container">
+        <h1><i class="fas fa-search-check"></i> RumourCheck</h1>
+        <p class="lead">Verify the authenticity of news articles with our AI-powered detection system</p>
+
+        <form asp-action="CheckNews" method="post" class="check-form">
+            <div class="form-group">
+                <textarea name="text" class="form-control" placeholder="Paste news article content here..." required></textarea>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-search"></i> Analyze Article
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="features">
+    <div class="container">
+        <h2 class="text-center">How It Works</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-paste"></i>
+                </div>
+                <h3>Paste Content</h3>
+                <p>Copy and paste the news article text you want to verify</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>AI Analysis</h3>
+                <p>Our system analyzes the text using machine learning models</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3>Get Results</h3>
+                <p>Receive a detailed authenticity report with confidence scores</p>
+            </div>
         </div>
-    </form>
+    </div>
 </div>

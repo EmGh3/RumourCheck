@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RumourCheck_front")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+efcfc9a09a905cf789415b6b89419051644a9544")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8be5bc02c614c584241466a8a840e1a7c75bbb2")]
 [assembly: System.Reflection.AssemblyProductAttribute("RumourCheck_front")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RumourCheck_front")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,36 +3,76 @@
     ViewData["Title"] = "Analysis Results";
 }
 
-<link rel="stylesheet" href="~/css/result.css" />
+<div class="results-container">
+    <div class="container">
+        <h1 class="results-title">Analysis Results</h1>
 
-<div class="result-container">
-    <h2>Analysis Results</h2>
-
-    <div class="card @(Model.Prediction ? "border-success" : "border-danger")">
-        <div class="card-body">
-            <h5 class="card-title">
-                <span>@(Model.Prediction ? "✅ Trustworthy Content" : "❌ Potential Fake News")</span>
-                <span class="badge bg-@(Model.Prediction ? "success" : "danger")">
+        <div class="result-card @(Model.Prediction ? "trustworthy" : "fake")">
+            <div class="result-header">
+                <h2>
+                    @if (Model.Prediction)
+                    {
+                        <i class="fas fa-check-circle"></i>
+                    }
+                    else
+                    {
+                        <i class="fas fa-times-circle"></i>
+                    }
+                    @(Model.Prediction ? "Trustworthy Content" : "Potential Fake News")
+                </h2>
+                <div class="confidence-badge">
                     Confidence: @((Model.Prediction ? Model.TrueConfidence : Model.FakeConfidence).ToString("P0"))
-                </span>
-            </h5>
+                </div>
+            </div>
 
             <div class="confidence-meter">
-                <div class="confidence-bar">
-                    <div class="confidence-fill" style="width: @((Model.TrueConfidence * 100).ToString("0"))%; background-color: var(--success-color);"></div>
+                <div class="meter-labels">
+                    <span>True</span>
+                    <span>False</span>
                 </div>
-                <div class="confidence-labels">
-                    <span>True: @Model.TrueConfidence.ToString("P1")</span>
-                    <span>False: @Model.FakeConfidence.ToString("P1")</span>
+                <div class="meter-bar">
+                    <div class="true-bar" style="width: @((Model.TrueConfidence * 100).ToString("0"))%"></div>
+                    <div class="false-bar" style="width: @((Model.FakeConfidence * 100).ToString("0"))%"></div>
+                </div>
+                <div class="meter-values">
+                    <span>@Model.TrueConfidence.ToString("P1")</span>
+                    <span>@Model.FakeConfidence.ToString("P1")</span>
                 </div>
             </div>
 
-            <div class="content-box">
-                <h6>Analyzed Text:</h6>
-                <p class="card-text">@Model.Text</p>
+            <div class="analyzed-content">
+                <h3>Analyzed Text:</h3>
+                <div class="content-box">
+                    @Model.Text
+                </div>
+            </div>
+
+            <div class="result-actions">
+                <a asp-action="Index" class="btn btn-primary">
+                    <i class="fas fa-redo"></i> Analyze Another
+                </a>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-share-alt"></i> Share Results
+                </button>
             </div>
         </div>
-    </div>
 
-    <a asp-action="Index" class="btn btn-primary mt-3">Check Another Article</a>
+        <div class="result-tips">
+            <h3>@(Model.Prediction ? "Tips for Reading Trustworthy Content:" : "Warning Signs of Fake News:")</h3>
+            <ul>
+                @if (Model.Prediction)
+                {
+                    <li><i class="fas fa-check"></i> This content appears to come from a credible source</li>
+                    <li><i class="fas fa-check"></i> The claims are supported by evidence</li>
+                    <li><i class="fas fa-check"></i> The writing style is professional and balanced</li>
+                }
+                else
+                {
+                    <li><i class="fas fa-exclamation-triangle"></i> Emotional or sensationalist language detected</li>
+                    <li><i class="fas fa-exclamation-triangle"></i> Lack of credible sources or references</li>
+                    <li><i class="fas fa-exclamation-triangle"></i> Unusual publishing patterns detected</li>
+                }
+            </ul>
+        </div>
+    </div>
 </div>

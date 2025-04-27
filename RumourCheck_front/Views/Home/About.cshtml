@@ -1,0 +1,164 @@
+﻿@{
+    ViewData["Title"] = "About RumourCheck";
+}
+
+<div class="about-container">
+    <div class="about-hero">
+        <div class="container">
+            <h1><i class="fas fa-info-circle"></i> About RumourCheck</h1>
+            <p class="lead">Our mission to combat misinformation with AI-powered verification</p>
+        </div>
+    </div>
+
+    <div class="about-content">
+        <div class="container">
+            <section class="about-section">
+                <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+                <p>RumourCheck was created to empower internet users with tools to identify potentially misleading or false information. In an era of information overload, we believe everyone deserves access to truth verification tools.</p>
+                <div class="mission-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-label">Articles Analyzed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Accuracy Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Verification</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-section">
+                <h2><i class="fas fa-cogs"></i> How It Works</h2>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Natural Language Processing</h3>
+                            <p>Our system breaks down the text to understand linguistic patterns, sentiment, and semantic meaning.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Machine Learning Analysis</h3>
+                            <p>Proprietary algorithms compare the content against known factual patterns and deception markers.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Source Verification</h3>
+                            <p>We cross-reference claims with reputable fact-checking databases and news sources.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Confidence Scoring</h3>
+                            <p>Results are presented with clear confidence percentages to indicate reliability.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-section team-section">
+                <h2><i class="fas fa-users"></i> Our Team</h2>
+                <p class="team-description">We're a team of college students committed to fighting misinformation.</p>
+                <div class="team-members">
+                    <div class="team-card">
+                        <div class="team-photo placeholder"></div>
+                        <h3>Emna Gharbi</h3>
+                        <p class="team-role">GL3</p>
+                        <p class="team-bio">Full Stack Developer</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo placeholder"></div>
+                        <h3>Yasmine Sassi</h3>
+                        <p class="team-role">GL3</p>
+                        <p class="team-bio">Full Stack Developer</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo placeholder"></div>
+                        <h3>Amine Jerbi</h3>
+                        <p class="team-role">GL3</p>
+                        <p class="team-bio">Full Stack Developer</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo placeholder"></div>
+                        <h3>Rami kaabi</h3>
+                        <p class="team-role">GL3</p>
+                        <p class="team-bio">Full Stack Developer</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo placeholder"></div>
+                        <h3>Maryem Dammak</h3>
+                        <p class="team-role">GL3</p>
+                        <p class="team-bio">Full Stack Developer</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-photo placeholder"></div>
+                        <h3>Ithar Belhaj Amor</h3>
+                        <p class="team-role">GL3</p>
+                        <p class="team-bio">Full Stack Developer</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-section">
+                <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">How accurate is RumourCheck? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer">
+                            <p>Our current models achieve 95% accuracy in controlled tests against verified datasets. However, no system is perfect, and we recommend using our tool as one of several verification methods.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What types of content can I check? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer">
+                            <p>RumourCheck works best with news articles, blog posts, and other written content. We're currently optimizing for English-language political and health-related content.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Is my data stored when I check an article? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer">
+                            <p>We temporarily store content for analysis but permanently anonymize all data within 24 hours. We never store personal information with the content.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cta-section">
+                <h3>Ready to verify content?</h3>
+                <a asp-action="Index" class="btn btn-primary btn-large">
+                    <i class="fas fa-search"></i> Check an Article Now
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+
+                // Toggle answer visibility
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+
+                // Rotate icon
+                icon.style.transform = answer.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0deg)';
+
+                // Toggle active class
+                question.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+}
