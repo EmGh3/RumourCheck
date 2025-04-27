@@ -12,12 +12,15 @@
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                <i class="fas fa-search-check"></i> FactCheck
+                <i class="fas fa-search-check"></i> RumourCheck
             </a>
             <div class="navbar-links">
                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About</a>
                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                <a class="nav-link" asp-controller="Dashboard" asp-action="Index">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
             </div>
         </div>
     </nav>
