@@ -1,9 +1,16 @@
-﻿namespace RumourCheck_front.Models
+﻿using System.Text.Json.Serialization;
+
+namespace RumourCheck_front.Models
 {
     public class DashboardStats
     {
+        [JsonPropertyName("total_analyses")]
         public int TotalAnalyses { get; set; }
-        public int VerifiedNews { get; set; }  // Real news count
+
+        [JsonPropertyName("verified_news")]
+        public int VerifiedNews { get; set; }
+
+        [JsonPropertyName("fake_news_detected")]
         public int FakeNewsDetected { get; set; }
     }
 }

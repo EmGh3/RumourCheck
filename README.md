@@ -1,5 +1,7 @@
 # Fake News Detection Project (RumourCheck)
 
+use xampp create database rumourcheck
+
 ## Installation
 
 ```bash

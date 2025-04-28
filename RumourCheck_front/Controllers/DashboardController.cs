@@ -28,12 +28,12 @@ public class DashboardController : Controller
         try
         {
             // Get dashboard statistics
-            var statsResponse = await _httpClient.GetAsync("/Dashboard/stats");
+            var statsResponse = await _httpClient.GetAsync("/dashboard/stats");
             statsResponse.EnsureSuccessStatusCode();
             var stats = await statsResponse.Content.ReadFromJsonAsync<DashboardStats>();
 
             // Get recent checks
-            var checksResponse = await _httpClient.GetAsync("/Dashboard/recent-checks");
+            var checksResponse = await _httpClient.GetAsync("/dashboard/recent-checks");
             checksResponse.EnsureSuccessStatusCode();
             var recentChecks = await checksResponse.Content.ReadFromJsonAsync<List<RecentCheck>>();
 
