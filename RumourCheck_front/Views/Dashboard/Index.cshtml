@@ -1,4 +1,6 @@
-﻿@{
+﻿@model RumourCheck_front.ViewModels.DashboardViewModel
+
+@{
     ViewData["Title"] = "Dashboard";
 }
 
@@ -11,7 +13,7 @@
                 <i class="fas fa-search"></i>
             </div>
             <h3>Analyses récentes</h3>
-            <div class="stat-value">12</div>
+            <div class="stat-value">@Model.TotalAnalyses</div>
         </div>
 
         <div class="stat-card">
@@ -19,7 +21,7 @@
                 <i class="fas fa-check-circle"></i>
             </div>
             <h3>Informations vérifiées</h3>
-            <div class="stat-value">8</div>
+            <div class="stat-value">@Model.VerifiedNews</div>
         </div>
 
         <div class="stat-card">
@@ -27,20 +29,23 @@
                 <i class="fas fa-times-circle"></i>
             </div>
             <h3>Fake news détectées</h3>
-            <div class="stat-value">4</div>
+            <div class="stat-value">@Model.FakeNewsDetected</div>
         </div>
     </div>
 
     <div class="recent-checks">
         <h2><i class="fas fa-history"></i> Dernières vérifications</h2>
         <div class="check-list">
-            <!-- Exemple d'élément -->
-            <div class="check-item">
-                <div class="check-result true">Vrai</div>
-                <div class="check-content">"Le changement climatique est confirmé par 97% des scientifiques"</div>
-                <div class="check-date">15/06/2023</div>
-            </div>
-            <!-- Ajoutez d'autres éléments ici -->
+            @foreach (var check in Model.RecentChecks)
+            {
+                <div class="check-item">
+                    <div class="check-result @(check.IsFake ? "false" : "true")">
+                        @(check.IsFake ? "Faux" : "Vrai")
+                    </div>
+                    <div class="check-content">@check.Text</div>
+                    <div class="check-date">@check.Date.ToString("dd/MM/yyyy")</div>
+                </div>
+            }
         </div>
     </div>
 </div>

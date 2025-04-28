@@ -1,10 +1,17 @@
-﻿namespace RumourCheck_front.ViewModels
+﻿using RumourCheck_front.Models;
+
+namespace RumourCheck_front.ViewModels
 {
     public class DashboardViewModel
     {
-        public int TotalChecks { get; set; }
-        public int TrueNews { get; set; }
-        public int FakeNews { get; set; }
-        //public List<Analysis> RecentChecks { get; set; }
+        public int TotalAnalyses { get; set; }
+        public int VerifiedNews { get; set; }
+        public int FakeNewsDetected { get; set; }
+        public List<RecentCheck> RecentChecks { get; set; } = new List<RecentCheck>();
+
+        // Calculated properties
+        public double AccuracyPercentage =>
+            TotalAnalyses > 0 ? Math.Round((VerifiedNews + FakeNewsDetected) * 100.0 / TotalAnalyses, 1) : 0;
+
     }
 }

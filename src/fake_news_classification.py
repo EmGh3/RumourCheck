@@ -1,9 +1,12 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, APIRouter
 from pydantic import BaseModel
 import joblib
 from text_cleaning import *
+from datetime import datetime, timedelta
 from pathlib import Path
 import os
+import random
+
 
 app = FastAPI()
 
@@ -46,3 +49,34 @@ async def predict(news: NewsRequest):
         }
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
+    
+
+
+
+@app.get("/Dashboard/stats")
+async def get_dashboard_stats():
+    # In a real app, you would query your database
+    return {
+        "TotalAnalyses": random.randint(50, 200),
+        "VerifiedNews": random.randint(30, 150),
+        "FakeNewsDetected": random.randint(10, 50)
+    }
+
+@app.get("/Dashboard/recent-checks")
+async def get_recent_checks():
+    # Example mock data - replace with DB queries
+    sample_texts = [
+        "Le gouvernement annonce de nouvelles mesures économiques",
+        "Une nouvelle espèce animale découverte en Amazonie",
+        "Vaccins liés à des effets secondaires graves - FAKE",
+        "Élections reportées en raison de problèmes techniques"
+    ]
+    
+    return [
+        {
+            "text": text,
+            "is_fake": "FAKE" in text,
+            "date": (datetime.now() - timedelta(days=i)).isoformat()
+        }
+        for i, text in enumerate(sample_texts)
+    ]
