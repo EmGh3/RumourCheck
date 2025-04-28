@@ -1,11 +1,20 @@
-from fastapi import FastAPI, HTTPException, APIRouter
+from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel
 import joblib
 from text_cleaning import *
 from datetime import datetime, timedelta
+from database import SessionLocal, Prediction
+from sqlalchemy.orm import Session
 from pathlib import Path
 import os
 import random
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 
 app = FastAPI()
@@ -37,46 +46,58 @@ except Exception as e:
 
 
 @app.post("/predict")
-async def predict(news: NewsRequest):
+async def predict(news: NewsRequest, db: Session = Depends(get_db)):
     try:
+        # Your existing prediction logic
         cleaned_text = clean_text(news.text)
         text_vector = vectorizer.transform([cleaned_text])
         probabilities = model.predict_proba(text_vector)[0]
+        prediction = bool(model.predict(text_vector)[0])
+        
+        # Store in database
+        db_prediction = Prediction(
+            text=news.text,
+            is_fake=prediction,
+            confidence_fake=float(probabilities[0]),
+            confidence_true=float(probabilities[1])
+        )
+        db.add(db_prediction)
+        db.commit()
+        db.refresh(db_prediction)
+        
         return {
-            "prediction": bool(model.predict(text_vector)[0]),
+            "prediction": prediction,
             "confidence_fake": float(probabilities[0]),
-            "confidence_true": float(probabilities[1])
+            "confidence_true": float(probabilities[1]),
+            "prediction_id": db_prediction.id
         }
     except Exception as e:
+        db.rollback()
         raise HTTPException(status_code=400, detail=str(e))
+
+@app.get("/dashboard/stats")
+async def get_dashboard_stats(db: Session = Depends(get_db)):
+    total = db.query(Prediction).count()
+    fake = db.query(Prediction).filter(Prediction.is_fake == 0).count()
     
-
-
-
-@app.get("/Dashboard/stats")
-async def get_dashboard_stats():
-    # In a real app, you would query your database
     return {
-        "TotalAnalyses": random.randint(50, 200),
-        "VerifiedNews": random.randint(30, 150),
-        "FakeNewsDetected": random.randint(10, 50)
+        "total_analyses": total,
+        "verified_news": total - fake,
+        "fake_news_detected": fake
     }
 
-@app.get("/Dashboard/recent-checks")
-async def get_recent_checks():
-    # Example mock data - replace with DB queries
-    sample_texts = [
-        "Le gouvernement annonce de nouvelles mesures économiques",
-        "Une nouvelle espèce animale découverte en Amazonie",
-        "Vaccins liés à des effets secondaires graves - FAKE",
-        "Élections reportées en raison de problèmes techniques"
-    ]
+@app.get("/dashboard/recent-checks")
+async def get_recent_checks(db: Session = Depends(get_db)):
+    recent = db.query(Prediction)\
+              .order_by(Prediction.created_at.desc())\
+              .limit(5)\
+              .all()
     
     return [
         {
-            "text": text,
-            "is_fake": "FAKE" in text,
-            "date": (datetime.now() - timedelta(days=i)).isoformat()
+            "text": p.text[:100] + "..." if len(p.text) > 100 else p.text,
+            "is_fake": p.is_fake,
+            "date": p.created_at.isoformat()
         }
-        for i, text in enumerate(sample_texts)
+        for p in recent
     ]
