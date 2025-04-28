@@ -32,7 +32,17 @@
             <div class="stat-value">@Model.FakeNewsDetected</div>
         </div>
     </div>
+    <div class="analytics-section">
+        <div class="chart-container">
+            <h3>Daily Analysis Volume</h3>
+            <canvas id="dailyChart" width="400" height="200"></canvas>
+        </div>
 
+        <div class="chart-container">
+            <h3>Fake vs True News</h3>
+            <img src="data:image/png;base64,@Model.PieChartImage" alt="News Distribution Pie Chart" />
+        </div>
+    </div>
     <div class="recent-checks">
         <h2><i class="fas fa-history"></i> Dernières vérifications</h2>
         <div class="check-list">
@@ -49,3 +59,45 @@
         </div>
     </div>
 </div>
+
+    @section Scripts {
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            // Daily stats line chart
+            const dailyCtx = document.getElementById('dailyChart').getContext('2d');
+            const dailyChart = new Chart(dailyCtx, {
+                type: 'line',
+                data: {
+                    labels: @Json.Serialize(Model.DailyStats.Select(d => d.Date)),
+                    datasets: [{
+                        label: 'Analyses per Day',
+                        data: @Json.Serialize(Model.DailyStats.Select(d => d.Count)),
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 2,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Analyses'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    }
+
+    

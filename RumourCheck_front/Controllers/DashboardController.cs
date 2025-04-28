@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Text.Json;
 using System.Text;
 using RumourCheck_front.ViewModels;
+using Microsoft.AspNetCore.Http.Json;
 
 public class DashboardController : Controller
 {
@@ -25,52 +26,58 @@ public class DashboardController : Controller
 
     public async Task<IActionResult> Index()
     {
+        var viewModel = new DashboardViewModel();
+
         try
         {
-            // Get dashboard statistics
+            // Get basic stats
             var statsResponse = await _httpClient.GetAsync("/dashboard/stats");
-            statsResponse.EnsureSuccessStatusCode();
-            var stats = await statsResponse.Content.ReadFromJsonAsync<DashboardStats>();
+            if (statsResponse.IsSuccessStatusCode)
+            {
+                var stats = await statsResponse.Content.ReadFromJsonAsync<DashboardStats>();
+                viewModel.TotalAnalyses = stats?.TotalAnalyses ?? 0;
+                viewModel.VerifiedNews = stats?.VerifiedNews ?? 0;
+                viewModel.FakeNewsDetected = stats?.FakeNewsDetected ?? 0;
+            }
 
             // Get recent checks
             var checksResponse = await _httpClient.GetAsync("/dashboard/recent-checks");
-            checksResponse.EnsureSuccessStatusCode();
-            var recentChecks = await checksResponse.Content.ReadFromJsonAsync<List<RecentCheck>>();
-
-            return View(new DashboardViewModel
+            if (checksResponse.IsSuccessStatusCode)
             {
-                TotalAnalyses = stats?.TotalAnalyses ?? 0,
-                VerifiedNews = stats?.VerifiedNews ?? 0,
-                FakeNewsDetected = stats?.FakeNewsDetected ?? 0,
-                RecentChecks = recentChecks ?? new List<RecentCheck>()
-            });
-        }
-        catch (HttpRequestException ex)
-        {
-            _logger.LogError(ex, "Error fetching dashboard data from API");
-
-            // Fallback data when API is unavailable
-            return View(new DashboardViewModel
-            {
-                TotalAnalyses = 12,
-                VerifiedNews = 8,
-                FakeNewsDetected = 4,
-                RecentChecks = new List<RecentCheck>
+                var options = new JsonSerializerOptions
                 {
-                    new RecentCheck
-                    {
-                        Text = "Le changement climatique est confirmé par 97% des scientifiques",
-                        IsFake = false,
-                        Date = DateTime.Now.AddDays(-2)
-                    },
-                    new RecentCheck
-                    {
-                        Text = "Nouvelle taxe annoncée pour les véhicules électriques - FAKE",
-                        IsFake = true,
-                        Date = DateTime.Now.AddDays(-1)
-                    }
-                }
-            });
+                    PropertyNameCaseInsensitive = true
+                };
+                viewModel.RecentChecks = await checksResponse.Content
+                    .ReadFromJsonAsync<List<RecentCheck>>(options) ?? new List<RecentCheck>();
+            }
+
+            // Get daily stats
+            var dailyResponse = await _httpClient.GetAsync("/analytics/daily-stats");
+            if (dailyResponse.IsSuccessStatusCode)
+            {
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+                viewModel.DailyStats = await dailyResponse.Content
+                    .ReadFromJsonAsync<List<DailyStat>>(options) ?? new List<DailyStat>();
+            }
+
+            // Get pie chart
+            var pieResponse = await _httpClient.GetAsync("/analytics/truth-pie-chart");
+            if (pieResponse.IsSuccessStatusCode)
+            {
+                var pieData = await pieResponse.Content.ReadFromJsonAsync<Dictionary<string, string>>();
+                viewModel.PieChartImage = pieData?["image"] ?? string.Empty;
+            }
+
+            return View(viewModel);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error loading dashboard data");
+            return View("Error", new ErrorViewModel {});
         }
     }
 }
