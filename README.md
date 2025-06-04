@@ -23,4 +23,8 @@ cd src
  python -m uvicorn fake_news_classification:app
 ```
 
+## true_processed.csv file
+
+https://drive.google.com/file/d/1GkKbRBp1irgqCKiJHZnH-7k_ov0b8nrr/view
+
 To run guardian_news_scraper.py you need an API key from [the Guardian](https://open-platform.theguardian.com/access/)

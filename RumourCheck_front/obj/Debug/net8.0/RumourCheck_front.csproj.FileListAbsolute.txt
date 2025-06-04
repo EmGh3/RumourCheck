@@ -120,3 +120,7 @@ C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.
 C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\RumourCheck_front.pdb
 C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\RumourCheck_front.genruntimeconfig.cache
 C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\ref\RumourCheck_front.dll
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\bin\Debug\net8.0\RumourCheck_front.staticwebassets.endpoints.json
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\staticwebassets\msbuild.RumourCheck_front.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Yasmine Sassi\Desktop\PPP\RumourCheck\RumourCheck_front\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
