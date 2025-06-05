@@ -28,3 +28,7 @@ cd src
 https://drive.google.com/file/d/1GkKbRBp1irgqCKiJHZnH-7k_ov0b8nrr/view
 
 To run guardian_news_scraper.py you need an API key from [the Guardian](https://open-platform.theguardian.com/access/)
+
+## fake_combined.csv file
+
+https://drive.google.com/file/d/1FLmFWaiOL7wVxH4masRasp8Sn-cuUh5c/view?usp=sharing
