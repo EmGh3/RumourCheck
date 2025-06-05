@@ -14,7 +14,7 @@ VECTORIZER_FILENAME = '../model/vectorizer.joblib'
 
 def main():
     # Load and prepare the data
-    fake_news_data = pd.read_csv("../dataset/Fake_processed.csv")
+    fake_news_data = pd.read_csv("../dataset/Fake_combined.csv")
     true_news_data = pd.read_csv("../dataset/True_processed.csv")
 
     # Add labels (0 for fake, 1 for true)
