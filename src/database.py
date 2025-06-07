@@ -1,4 +1,5 @@
 from sqlalchemy import create_engine, Column, Integer, String, Boolean, DateTime, Float
+from sqlalchemy.sql import func  # Import func for CURRENT_TIMESTAMP
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
@@ -14,11 +15,12 @@ class Prediction(Base):
     __tablename__ = "predictions"
 
     id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, nullable=False)
     text = Column(String(5000))
     is_fake = Column(Boolean)
     confidence_fake = Column(Float)
     confidence_true = Column(Float)
-    created_at = Column(DateTime, server_default='CURRENT_TIMESTAMP')
+    created_at = Column(DateTime, server_default=func.current_timestamp())
 
 # Create all tables
 def create_tables():

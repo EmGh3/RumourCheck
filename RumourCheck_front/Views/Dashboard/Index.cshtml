@@ -40,7 +40,14 @@
 
         <div class="chart-container">
             <h3>Fake vs True News</h3>
-            <img src="data:image/png;base64,@Model.PieChartImage" alt="News Distribution Pie Chart" />
+            @if (string.IsNullOrEmpty(Model.PieChartImage))
+            {
+                <p>No pie chart data available.</p>
+            }
+            else
+            {
+                <img src="data:image/png;base64,@Model.PieChartImage" alt="News Distribution Pie Chart" style="max-width: 100%; height: auto;" />
+            }
         </div>
     </div>
     <div class="recent-checks">
@@ -49,55 +56,52 @@
             @foreach (var check in Model.RecentChecks)
             {
                 <div class="check-item">
-                    <div class="check-result @(check.IsFake ? "false" : "true")">
+                    <div class="check-result @(check.IsFake ? "true" : "false")">
                         @(check.IsFake ? "Vrai" : "Faux")
                     </div>
                     <div class="check-content">@check.Text</div>
-                    <div class="check-date">@check.Date.ToString("dd/MM/yyyy")</div>
+                    <div class="check-date">@check.Date</div>
                 </div>
             }
         </div>
     </div>
 </div>
 
-    @section Scripts {
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script>
-            // Daily stats line chart
-            const dailyCtx = document.getElementById('dailyChart').getContext('2d');
-            const dailyChart = new Chart(dailyCtx, {
-                type: 'line',
-                data: {
-                    labels: @Json.Serialize(Model.DailyStats.Select(d => d.Date)),
-                    datasets: [{
-                        label: 'Analyses per Day',
-                        data: @Json.Serialize(Model.DailyStats.Select(d => d.Count)),
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                        borderColor: 'rgba(54, 162, 235, 1)',
-                        borderWidth: 2,
-                        tension: 0.3
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Number of Analyses'
-                            }
-                        },
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Date'
-                            }
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const dailyCtx = document.getElementById('dailyChart').getContext('2d');
+        const dailyChart = new Chart(dailyCtx, {
+            type: 'line',
+            data: {
+                labels: @Json.Serialize(Model.DailyStats.Select(d => d.Date)),
+                datasets: [{
+                    label: 'Analyses per Day',
+                    data: @Json.Serialize(Model.DailyStats.Select(d => d.Count)),
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 2,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Analyses'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Date'
                         }
                     }
                 }
-            });
-        </script>
-    }
-
-    
+            }
+        });
+    </script>
+}

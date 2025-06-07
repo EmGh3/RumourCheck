@@ -11,6 +11,6 @@ namespace RumourCheck_front.Models
         public bool IsFake { get; set; }
 
         [JsonPropertyName("date")]
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
     }
 }

@@ -10,6 +10,12 @@ from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 import io
 import base64
+from starlette.responses import StreamingResponse
+
+# Pydantic model for request body
+class NewsRequest(BaseModel):
+    text: str
+    user_id: int
 
 def get_db():
     db = SessionLocal()
@@ -21,9 +27,6 @@ def get_db():
 
 app = FastAPI()
 
-
-class NewsRequest(BaseModel):
-    text: str
 
 
 # Get the absolute path to the models directory
@@ -50,14 +53,13 @@ except Exception as e:
 @app.post("/predict")
 async def predict(news: NewsRequest, db: Session = Depends(get_db)):
     try:
-        # Your existing prediction logic
         cleaned_text = clean_text(news.text)
         text_vector = vectorizer.transform([cleaned_text])
         probabilities = model.predict_proba(text_vector)[0]
         prediction = bool(model.predict(text_vector)[0])
         
-        # Store in database
         db_prediction = Prediction(
+            user_id=news.user_id,  # Extract from request body
             text=news.text,
             is_fake=prediction,
             confidence_fake=float(probabilities[0]),
@@ -124,32 +126,58 @@ async def get_daily_stats(db: Session = Depends(get_db)):
         for date, count in daily_counts
     ]
 
-@app.get("/analytics/truth-pie-chart")
-async def get_truth_pie_chart(db: Session = Depends(get_db)):
-    fake_count = db.query(Prediction).filter(Prediction.is_fake == True).count()
-    true_count = db.query(Prediction).filter(Prediction.is_fake == False).count()
-    
-    plt.figure(figsize=(8, 8))
-    plt.pie(
-        [fake_count, true_count],
-        labels=['Fake News', 'Verified News'],
-        colors=['#e74a3b', '#1cc88a'],
-        autopct='%1.1f%%',
-        startangle=90,
-        textprops={'fontsize': 12},
-        wedgeprops={'edgecolor': 'white', 'linewidth': 1},
-        explode=(0.05, 0)  # Slight separation for emphasis
-    )
-    plt.title('News Authenticity Distribution\n', fontsize=14, fontweight='bold')
-    
-    # Add center circle for donut effect
-    centre_circle = plt.Circle((0,0), 0.70, fc='white')
-    fig = plt.gcf()
-    fig.gca().add_artist(centre_circle)
-    
-    buffer = io.BytesIO()
-    plt.savefig(buffer, format='png', dpi=100, bbox_inches='tight')
-    buffer.seek(0)
-    plt.close()
-    
-    return {"image": base64.b64encode(buffer.read()).decode('utf-8')}
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+@app.get("/analytics/truth-pie-chart/{user_id}")
+async def get_analysis_pie_chart(user_id: int, db: Session = Depends(get_db)):
+    try:
+        # Query counts
+        fake_count = db.query(Prediction).filter(Prediction.user_id == user_id, Prediction.is_fake == False).count()  # Swapped
+        true_count = db.query(Prediction).filter(Prediction.user_id == user_id, Prediction.is_fake == True).count()   # Swapped
+        
+        logger.info(f"User {user_id}: Fake count = {fake_count}, True count = {true_count}")
+        
+        if fake_count == 0 and true_count == 0:
+            logger.warning(f"No predictions found for user {user_id}")
+            plt.figure(figsize=(8, 8))
+            plt.text(0.5, 0.5, 'No Data Available', anchor='center', horizontalalignment='center', verticalalignment='center', fontsize=14)
+            plt.title('News Authenticity Distribution\n', fontsize=14, fontweight='bold')
+            plt.axis('off')
+            
+            buffer = io.BytesIO()
+            plt.savefig(buffer, format='png', dpi=100, bbox_inches='tight')
+            buffer.seek(0)
+            plt.close()
+            
+            return StreamingResponse(buffer, media_type="image/png")
+        
+        plt.figure(figsize=(8, 8))
+        plt.pie(
+            [fake_count, true_count],
+            labels=['Fake News', 'True News'],
+            colors=['#e74a3b', '#1cc88a'],  # Red for Fake, Green for True
+            autopct='%1.2f%%',
+            startangle=90,
+            textprops={'fontsize': 12},
+            wedgeprops={'edgecolor': 'white', 'linewidth': 1},
+            explode=(0.1, 0)
+        )
+        plt.title('News Authenticity Distribution\n', fontsize=14, fontweight='bold')
+        
+        centre_circle = plt.Circle((0,0), 0.7, fc='white')
+        fig = plt.gcf()
+        fig.gca().add_artist(centre_circle)
+        
+        buffer = io.BytesIO()
+        plt.savefig(buffer, format='png', dpi=100, bbox_inches='tight')
+        buffer.seek(0)
+        plt.close()
+        
+        return StreamingResponse(buffer, media_type="image/png")
+    except Exception as e:
+        logger.error(f"Error generating pie chart for user {user_id}: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error generating pie chart: {str(e)}")
