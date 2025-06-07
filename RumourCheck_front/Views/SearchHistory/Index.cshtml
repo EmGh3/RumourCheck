@@ -1,0 +1,52 @@
+@model IEnumerable<SearchHistory>
+
+@{
+    ViewData["Title"] = "Search History";
+}
+
+<div class="container mt-4">
+    <h2>Search History</h2>
+    
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info mt-3">
+            No search history found.
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive mt-3">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Search Query</th>
+                        <th>Result Summary</th>
+                        <th>Search Time</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.SearchQuery</td>
+                            <td>@item.ResultSummary</td>
+                            <td>@item.Timestamp.ToString("dd MMM yyyy HH:mm")</td>
+                            <td>
+                                <form asp-action="Delete" asp-route-id="@item.Id" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this search history?')">
+                                        <i class="fas fa-trash"></i> Delete
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script src="https://kit.fontawesome.com/your-code.js"></script>
+}
