@@ -33,7 +33,10 @@ namespace RumourCheck_front.Data
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.SearchQuery).IsRequired();
-                entity.Property(e => e.ResultSummary).HasMaxLength(1000);
+                entity.Property(e => e.IsFake).IsRequired(); // Added
+                entity.Property(e => e.FakeConfidence).IsRequired(); // Added
+                entity.Property(e => e.TrueConfidence).IsRequired(); // Added
+                entity.Property(e => e.Timestamp).IsRequired(); // Added for consistency
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.SearchHistories)
                     .HasForeignKey(d => d.UserId)

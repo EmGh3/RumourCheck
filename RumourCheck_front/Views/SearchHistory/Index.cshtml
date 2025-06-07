@@ -1,4 +1,4 @@
-@model IEnumerable<SearchHistory>
+@model IEnumerable<RumourCheck_front.Models.SearchHistory>
 
 @{
     ViewData["Title"] = "Search History";
@@ -6,7 +6,7 @@
 
 <div class="container mt-4">
     <h2>Search History</h2>
-    
+
     @if (!Model.Any())
     {
         <div class="alert alert-info mt-3">
@@ -20,7 +20,9 @@
                 <thead>
                     <tr>
                         <th>Search Query</th>
-                        <th>Result Summary</th>
+                        <th>Prediction</th>
+                        <th>Fake Confidence</th>
+                        <th>True Confidence</th>
                         <th>Search Time</th>
                         <th>Actions</th>
                     </tr>
@@ -30,7 +32,9 @@
                     {
                         <tr>
                             <td>@item.SearchQuery</td>
-                            <td>@item.ResultSummary</td>
+                            <td>@(item.IsFake ? "Fake" : "True")</td>
+                            <td>@(item.FakeConfidence.ToString("P2"))</td>
+                            <td>@(item.TrueConfidence.ToString("P2"))</td>
                             <td>@item.Timestamp.ToString("dd MMM yyyy HH:mm")</td>
                             <td>
                                 <form asp-action="Delete" asp-route-id="@item.Id" method="post" class="d-inline">

@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using RumourCheck_front.Models;
-using System.Diagnostics;
 using System.Text.Json;
 using System.Text;
 using RumourCheck_front.ViewModels;
 using RumourCheck_front.Services;
+using System.Security.Claims;
 
 public class HomeController : Controller
 {
@@ -13,7 +13,7 @@ public class HomeController : Controller
     private readonly SearchHistoryService _searchHistoryService;
 
     public HomeController(
-        IHttpClientFactory httpClientFactory, 
+        IHttpClientFactory httpClientFactory,
         ILogger<HomeController> logger,
         SearchHistoryService searchHistoryService)
     {
@@ -39,48 +39,47 @@ public class HomeController : Controller
     [HttpPost]
     public async Task<IActionResult> CheckNews(string text)
     {
-        // Create request object matching FastAPI model
-        var request = new
+        try
         {
-            text = text
-        };
+            var userId = _searchHistoryService.GetCurrentUserId(User);
+            _logger.LogInformation($"Sending user_id: {userId} with text: {text}");
+            var request = new { text = text, user_id = userId };
+            var jsonString = JsonSerializer.Serialize(request);
+            _logger.LogInformation($"Request JSON: {jsonString}");
+            var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
-        // Serialize
-        var jsonString = JsonSerializer.Serialize(request);
+            var response = await _httpClient.PostAsync("/predict", content);
+            var responseContent = await response.Content.ReadAsStringAsync();
 
-        // Create HTTP content
-        var content = new StringContent(
-            jsonString,
-            Encoding.UTF8,
-            "application/json");
+            if (!response.IsSuccessStatusCode)
+            {
+                _logger.LogError($"API Error: {response.StatusCode} - {responseContent}");
+                return BadRequest($"API Error: {response.StatusCode} - {responseContent}");
+            }
 
-        // Send request
-        var response = await _httpClient.PostAsync("/predict", content);
-        var responseContent = await response.Content.ReadAsStringAsync();
-        _logger.LogInformation($"API Response: {responseContent}");
+            var result = JsonSerializer.Deserialize<PredictionResult>(responseContent);
 
-        if (!response.IsSuccessStatusCode)
-        {
-            return BadRequest($"API Error: {response.StatusCode} - {responseContent}");
+            // Invert IsFake logic: prediction=True (fake) -> IsFake=false (true news)
+            await _searchHistoryService.AddSearchHistoryAsync(
+                text,
+                result.prediction, // Invert prediction
+                result.confidence_fake,
+                result.confidence_true,
+                userId
+            );
+
+            return View("Results", new PredictionResultViewModel
+            {
+                Text = text,
+                Prediction = result.prediction, // Invert for display
+                FakeConfidence = result.confidence_fake,
+                TrueConfidence = result.confidence_true
+            });
         }
-
-        // Deserialize
-        var result = JsonSerializer.Deserialize<PredictionResult>(responseContent);
-
-        // Save to search history
-        var userId = await _searchHistoryService.GetCurrentUserIdAsync(User);
-        await _searchHistoryService.AddSearchHistoryAsync(
-            text,
-            $"Prediction: {result.prediction}. Fake Confidence: {result.confidence_fake:N2}, True Confidence: {result.confidence_true:N2}",
-            userId
-        );
-
-        return View("Results", new PredictionResultViewModel
+        catch (Exception ex)
         {
-            Text = text,
-            Prediction = result.prediction,
-            FakeConfidence = result.confidence_fake,
-            TrueConfidence = result.confidence_true
-        });
+            _logger.LogError(ex, "Error processing news check");
+            return View("Error", new ErrorViewModel { });
+        }
     }
 }

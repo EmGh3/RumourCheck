@@ -14,29 +14,47 @@ namespace RumourCheck_front.Services
             _context = context;
         }
 
-        public async Task AddSearchHistoryAsync(string searchQuery, string resultSummary, int userId)
+        public async Task AddSearchHistoryAsync(string searchQuery, bool isFake, double fakeConfidence, double trueConfidence, int userId)
         {
+            var user = await _context.Users.FindAsync(userId);
+            if (user == null)
+            {
+                throw new InvalidOperationException($"User with ID {userId} not found");
+            }
+
             var history = new SearchHistory
             {
                 SearchQuery = searchQuery,
-                ResultSummary = resultSummary,
+                IsFake = isFake,
+                FakeConfidence = fakeConfidence,
+                TrueConfidence = trueConfidence,
                 UserId = userId,
                 Timestamp = DateTime.Now,
-                User = await _context.Users.FindAsync(userId)
+                User = user
             };
-
             await _context.SearchHistories.AddAsync(history);
             await _context.SaveChangesAsync();
         }
 
-        public async Task<int> GetCurrentUserIdAsync(ClaimsPrincipal user)
+        public int GetCurrentUserId(ClaimsPrincipal user)
         {
-            if (user == null)
+            if (user == null || !user.Identity.IsAuthenticated)
             {
                 throw new InvalidOperationException("User is not authenticated");
             }
 
-            return int.Parse(user.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var userIdClaim = user.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                throw new InvalidOperationException("User ID claim not found");
+            }
+
+            if (!int.TryParse(userIdClaim.Value, out int userId))
+            {
+                throw new InvalidOperationException("Invalid user ID format");
+            }
+
+            return userId;
         }
     }
 }

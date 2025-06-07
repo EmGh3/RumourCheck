@@ -44,8 +44,9 @@ namespace RumourCheck_front.Models
         [Display(Name = "Search Query")]
         public required string SearchQuery { get; set; }
 
-        [Display(Name = "Result Summary")]
-        public string? ResultSummary { get; set; }
+        public bool IsFake { get; set; }
+        public double FakeConfidence { get; set; } 
+        public double TrueConfidence { get; set; }
 
         [Display(Name = "Search Time")]
         public DateTime Timestamp { get; set; }

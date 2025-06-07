@@ -55,13 +55,15 @@ namespace RumourCheck_front.Services
             return user;
         }
 
-        public async Task AddSearchHistoryAsync(int userId, string query, string result)
+        public async Task AddSearchHistoryAsync(int userId, string query, string result, bool isfake, float fakeconf, float trueconf)
         {
             var history = new SearchHistory
             {
                 UserId = userId,
                 SearchQuery = query,
-                ResultSummary = result,
+                IsFake= isfake,
+                FakeConfidence = fakeconf,
+                TrueConfidence = trueconf,
                 Timestamp = DateTime.UtcNow,
                 User = await _context.Users.FindAsync(userId)
             };
