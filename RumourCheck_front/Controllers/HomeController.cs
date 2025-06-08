@@ -71,7 +71,7 @@ public class HomeController : Controller
             return View("Results", new PredictionResultViewModel
             {
                 Text = text,
-                Prediction = result.prediction, // Invert for display
+                Prediction = result.prediction, 
                 FakeConfidence = result.confidence_fake,
                 TrueConfidence = result.confidence_true
             });

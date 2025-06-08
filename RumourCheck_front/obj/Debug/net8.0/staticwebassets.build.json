@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jthJ9T3V2X7AzYvHdwRVUaKPEsLNk9nlHPOHJzy6uaI=",
+  "Hash": "Ld3TQW9PPLxKQZd5UYtLVDA9NaWUqE2M4TsputErhmU=",
   "Source": "RumourCheck_front",
   "BasePath": "_content/RumourCheck_front",
   "Mode": "Default",
@@ -91,25 +91,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
-    },
-    {
-      "Identity": "C:\\Users\\amino\\OneDrive\\Bureau\\PPP\\RumourCheck\\RumourCheck_front\\wwwroot\\js\\chart.js",
-      "SourceId": "RumourCheck_front",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\amino\\OneDrive\\Bureau\\PPP\\RumourCheck\\RumourCheck_front\\wwwroot\\",
-      "BasePath": "_content/RumourCheck_front",
-      "RelativePath": "js/chart.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\chart.js"
     },
     {
       "Identity": "C:\\Users\\amino\\OneDrive\\Bureau\\PPP\\RumourCheck\\RumourCheck_front\\wwwroot\\js\\site.js",
